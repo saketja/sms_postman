@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:sms_postman/Services/Colors.dart';
+
 class Leaderboard extends StatefulWidget {
   const Leaderboard({super.key});
 
@@ -11,13 +12,48 @@ class Leaderboard extends StatefulWidget {
 
 class _LeaderboardState extends State<Leaderboard> {
   final List<Map<String, dynamic>> leaderboardData = [
-    {'rank':'4','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 1','Points':'36'},
-    {'rank':'5','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 2','Points':'36'},
-    {'rank':'6','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 3','Points':'36'},
-    {'rank':'7','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 4','Points':'36'},
-    {'rank':'8','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 5','Points':'36'},
-    {'rank':'9','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 6','Points':'36'},
-    {'rank':'10','imagePath': 'assets/ListLeaderboard.png', 'text': 'Item 7','Points':'36'},
+    {
+      'rank': '4',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Ruhika',
+      'Points': '36'
+    },
+    {
+      'rank': '5',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Rajat',
+      'Points': '36'
+    },
+    {
+      'rank': '6',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Varun',
+      'Points': '36'
+    },
+    {
+      'rank': '7',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Ishita',
+      'Points': '36'
+    },
+    {
+      'rank': '8',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Saket',
+      'Points': '36'
+    },
+    {
+      'rank': '9',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Siddharth',
+      'Points': '36'
+    },
+    {
+      'rank': '10',
+      'imagePath': 'assets/ListLeaderboard.png',
+      'text': 'Abhishek',
+      'Points': '36'
+    },
   ];
   @override
   Widget build(BuildContext context) {
@@ -25,7 +61,7 @@ class _LeaderboardState extends State<Leaderboard> {
     double pH = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.black,
-      body:Stack(
+      body: Stack(
         children: [
           Positioned(
             top: 0,
@@ -42,32 +78,36 @@ class _LeaderboardState extends State<Leaderboard> {
             left: 0,
             right: 0,
             child: AppBar(
-              shadowColor: Colors.transparent,
-              backgroundColor: Colors.transparent,
-              leading: IconButton(
-                onPressed: () {
-                  if (ZoomDrawer.of(context)!.isOpen()) {
-                    ZoomDrawer.of(context)!.close();
-                  } else {
-                    ZoomDrawer.of(context)!.open();
-                  }
-                },
-                icon: SvgPicture.asset('assets/Drawer.svg'),
-              ),
-              centerTitle: true,
-              title: Text(
-                'Leaderboard',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
+                shadowColor: Colors.transparent,
+                backgroundColor: Colors.transparent,
+                leading: IconButton(
+                  onPressed: () {
+                    if (ZoomDrawer.of(context)!.isOpen()) {
+                      ZoomDrawer.of(context)!.close();
+                    } else {
+                      ZoomDrawer.of(context)!.open();
+                    }
+                  },
+                  icon: SvgPicture.asset('assets/Drawer.svg'),
                 ),
-              ),
-            ),
+                //centerTitle: true,
+                title: Text(
+                  'Leaderboard',
+                  style: TextStyle(
+                    color: Color(0xFFF5F5F5),
+                    fontSize: 24,
+                    fontFamily: 'Gilroy-ExtraBold',
+                    fontWeight: FontWeight.w600,
+                    height: 0,
+                    letterSpacing: 0.48,
+                  ),
+                )),
           ),
           Column(
             children: [
               Padding(
-                padding:EdgeInsets.symmetric(horizontal:10,vertical: pH*0.05),
+                padding:
+                    EdgeInsets.symmetric(horizontal: 10, vertical: pH * 0.05),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -79,7 +119,8 @@ class _LeaderboardState extends State<Leaderboard> {
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                border: Border.all(color: MyColors.color10, width: 3),
+                                border: Border.all(
+                                    color: MyColors.color10, width: 3),
                               ),
                               child: SvgPicture.asset(
                                 'assets/rank3.svg',
@@ -98,21 +139,34 @@ class _LeaderboardState extends State<Leaderboard> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Container(
                           padding: EdgeInsets.all(10),
                           child: Column(
                             children: [
                               Text(
-                                'Preet Vardhan',
+                                'Akshat Narayan',
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
+                                  fontSize: 12.40,
+                                  fontFamily: 'Gilroy-Bold',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0.12,
                                 ),
                               ),
+                              SizedBox(height: 15.0),
                               Text(
-                                '40 pts',
+                                '43 pts',
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
+                                  fontSize: 13,
+                                  fontFamily: 'Gilroy-Regular',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0.12,
                                 ),
                               )
                             ],
@@ -132,7 +186,8 @@ class _LeaderboardState extends State<Leaderboard> {
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                border: Border.all(color: MyColors.color10, width: 3),
+                                border: Border.all(
+                                    color: MyColors.color10, width: 3),
                               ),
                               child: SvgPicture.asset(
                                 'assets/rank3.svg',
@@ -151,19 +206,32 @@ class _LeaderboardState extends State<Leaderboard> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Column(
                           children: [
                             Text(
-                              'Preet Vardhan',
+                              'Arnav Dham',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
+                                fontSize: 12.40,
+                                fontFamily: 'Gilroy-Bold',
+                                fontWeight: FontWeight.w400,
+                                height: 0.12,
                               ),
                             ),
+                            SizedBox(height: 15.0),
                             Text(
-                              '42 pts',
+                              '43 pts',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
+                                fontSize: 13,
+                                fontFamily: 'Gilroy-Regular',
+                                fontWeight: FontWeight.w400,
+                                height: 0.12,
                               ),
                             )
                           ],
@@ -178,7 +246,8 @@ class _LeaderboardState extends State<Leaderboard> {
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                border: Border.all(color: MyColors.color10, width: 3),
+                                border: Border.all(
+                                    color: MyColors.color10, width: 3),
                               ),
                               child: SvgPicture.asset(
                                 'assets/rank3.svg',
@@ -197,23 +266,36 @@ class _LeaderboardState extends State<Leaderboard> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Container(
                           padding: EdgeInsets.all(10),
                           child: Column(
                             children: [
                               Text(
-                                'Preet Vardhan',
+                                'Arnav Dham',
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
+                                  fontSize: 12.40,
+                                  fontFamily: 'Gilroy-Bold',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0.12,
                                 ),
                               ),
+                              SizedBox(height: 15.0),
                               Text(
-                                '40 pts',
+                                '43 pts',
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
+                                  fontSize: 13,
+                                  fontFamily: 'Gilroy-Regular',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0.12,
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -224,7 +306,7 @@ class _LeaderboardState extends State<Leaderboard> {
               ),
               Expanded(
                 child: SingleChildScrollView(
-                  physics:BouncingScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   child: Column(
                     children: leaderboardData.map((itemData) {
                       String rank = itemData['rank'];
@@ -233,10 +315,12 @@ class _LeaderboardState extends State<Leaderboard> {
                       String points = itemData['Points'];
 
                       return Container(
-                        margin: EdgeInsets.only(left: 10,right: 10),
+                        margin: EdgeInsets.symmetric(horizontal: 10,vertical: 0.0),
                         child: Column(
                           children: [
-                            SizedBox(height: 10,),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Container(
                               decoration: ShapeDecoration(
                                 color: Color(0xFF221E42),
@@ -246,9 +330,18 @@ class _LeaderboardState extends State<Leaderboard> {
                               ),
                               height: 65,
                               width: double.infinity,
-                              margin: EdgeInsets.only(left: 0,right: 0),
+                              margin: EdgeInsets.only(left: 0, right: 0),
                               child: ListTile(
-                                leading: Text("$rank", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white)),
+                                leading: Text(
+                                  "$rank",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: 'Gilroy-Bold',
+                                    fontWeight: FontWeight.w500,
+                                    height: 0.20,
+                                  ),
+                                ),
                                 title: Row(
                                   children: [
                                     Container(
@@ -256,13 +349,32 @@ class _LeaderboardState extends State<Leaderboard> {
                                       height: 60,
                                       child: Image.asset(imagePath),
                                     ),
-                                    SizedBox(width: 16),
+                                    SizedBox(width: 12),
                                     Expanded(
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(text, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white)),
-                                          Text("$points pts", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.white)),
+                                          Text(
+                                            text,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14.40,
+                                              fontFamily: 'Gilroy-Bold',
+                                              fontWeight: FontWeight.w500,
+                                              height: 0.10,
+                                            ),
+                                          ),
+                                          Text(
+                                            "$points pts",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14.40,
+                                              fontFamily: 'Gilroy-Regular',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.10,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ),

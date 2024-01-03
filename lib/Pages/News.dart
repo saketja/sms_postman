@@ -23,16 +23,26 @@ class NewsTile extends StatelessWidget {
           Text(
             newsType,
             style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
+              color: Color(0xFFF5F5F5),
+              fontSize: 14,
+              fontFamily: 'Gilroy-Medium',
+              fontWeight: FontWeight.w400,
+              height: 0,
+              letterSpacing: 0.56,
             ),
           ),
           SizedBox(height: 8),
           Container(
             child: Text(
               newsDescription,
-              style: TextStyle(fontSize: 20,color: Colors.white),
+              style: TextStyle(
+                color: Color(0xFFF5F5F5),
+                fontSize: 18,
+                fontFamily: 'Gilroy-Bold',
+                fontWeight: FontWeight.w400,
+                height: 0,
+                letterSpacing: 0.72,
+              ),
             ),
           ),
           SizedBox(height: 8),
@@ -40,7 +50,14 @@ class NewsTile extends StatelessWidget {
             children: [
               Text(
                 timeSincePosted,
-                style: TextStyle(fontSize: 12, color: Colors.white),
+                style: TextStyle(
+                  color: Color(0xFFF5F5F5),
+                  fontSize: 14,
+                  fontFamily: 'Gilroy-Medium',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                  letterSpacing: 0.56,
+                ),
               ),
               Spacer(),
               IconButton(
@@ -107,26 +124,41 @@ class _NewsState extends State<News> {
                 },
                 icon: SvgPicture.asset('assets/Drawer.svg'),
               ),
-              centerTitle: true,
+             // centerTitle: true,
               title: Text(
                 'News',
                 style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
+                  color: Color(0xFFF5F5F5),
+                  fontSize: 24,
+                  fontFamily: 'Gilroy-Bold',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
+                  letterSpacing: 0.48,
                 ),
-              ),
+              )
             ),
           ),
           Column(
             children: <Widget>[
               SizedBox(height:pH*0.1),
+              SizedBox(height: 20.0),
               Container(
                 padding: EdgeInsets.only(left:15),
                 alignment: Alignment.topLeft,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Headlines of the Day", style: TextStyle(fontSize: 30,color: Colors.white)),
+                    Text(
+                      'Headlines of the Day',
+                      style: TextStyle(
+                        color: Color(0xFFF5F5F5),
+                        fontSize: 24,
+                        fontFamily: 'Gilroy-Bold',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                        letterSpacing: 0.96,
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -134,12 +166,22 @@ class _NewsState extends State<News> {
                 child: ListView.builder(
                   itemCount: 7,
                   itemBuilder: (context, index) {
-                    return NewsTile(
-                      newsType: 'Business',
-                      newsDescription: 'Market rejoices Fed decision;''\n''nifty is back above 19000;'
-                          '\n''Sensex gains 490 ...',
-                      timeSincePosted: '2 hours ago',
-                    );
+                    return Column(
+                    children: [
+                      NewsTile(
+                        newsType: 'Business',
+                        newsDescription: 'Market rejoices Fed decision;'
+                            '\n''nifty is back above 19000;'
+                            '\n''Sensex gains 490 ...',
+                        timeSincePosted: '2 hours ago',
+                      ),
+                      Divider( // Divider between list items
+                        height: 1,
+                        color: Color(0xff515151),
+                      ),
+                      SizedBox(height: 2.0,),
+                    ],
+                  );
                   },
                 ),
               ),
